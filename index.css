@@ -1,0 +1,202 @@
+:root {
+    --gold: #ffb338;
+    --light-shadow: #77571d;
+    --dark-shadow: #3e2904;
+    --arrow-bg: rgba(255, 255, 255, 0.3);
+    --arrow-icon: url(https://upload.wikimedia.org/wikipedia/commons/9/9d/Caret_down_font_awesome_whitevariation.svg);
+    --option-bg: white;
+    --select-bg: rgba(255, 255, 255, 0.2);
+}
+
+.container {
+    background: radial-gradient(#1fe3f591, #3fbbfe8e);
+    padding: 40px;
+    border-radius: 20px;
+}
+
+.title1 {
+    font-family: "Poppins" sans-serif;
+    font-weight: 700;
+    font-style: oblique;
+    text-transform: uppercase;
+    font-size: 100px;
+    text-shadow: -15px 5px 20px #ced0d3;
+    letter-spacing: 0.02em;
+    color: #ffffff;
+    text-shadow: 5px 5px 0px #024dda,
+        10px 10px 0px #1968df,
+        15px 15px 0px #2532e9,
+        20px 20px 0px #3140c4,
+        25px 25px 0px #528da8,
+        30px 30px 0px #3f87eb;
+}
+
+body {
+    display: grid;
+    place-items: center;
+    min-height: 100vh;
+    background: radial-gradient(#1fe4f5, #3fbafe);
+}
+
+.cardarea {
+    grid-area: 1/2/3;
+    font-size: 1.2em;
+    color: #fff;
+    text-decoration: none;
+    letter-spacing: 0.05em;
+    font-family: "Poppins", sans-serif;
+    background-color: #5f5f5f25;
+    padding: 20px;
+    position: relative;
+    border-radius: 20px;
+    border: var(--border-w) solid #7a1ff0;
+    border-color: rgba(0, 153, 224, 0.1);
+    box-shadow: 0 0.1em 2.25em -0.5em rgba(20, 118, 255, 0), 0 0.333em 0.5em -0.25em rgba(20, 118, 255, 0);
+    transition: 0.5s;
+    transition-property: border-color, background, box-shadow, color;
+    width: 100%;
+}
+
+.cardarearesult {
+    grid-area: 1/2/3;
+    font-size: 1.2em;
+    color: #eeeeee;
+    font-weight: 600;
+    text-decoration: none;
+    letter-spacing: 0.05em;
+    font-family: "Poppins", sans-serif;
+    background-color: #05bed660;
+    padding: 20px;
+    position: relative;
+    border-radius: 20px;
+    border: var(--border-w) solid #7a1ff0;
+    border-color: rgba(3, 93, 211, 0.1);
+    box-shadow: 0 0.1em 2.25em -0.5em rgba(20, 118, 255, 0), 0 0.333em 0.5em -0.25em rgba(20, 118, 255, 0);
+    transition: 0.5s;
+    transition-property: border-color, background, box-shadow, color;
+    width: 100%;
+}
+
+
+.cardarea:before,
+.cardarea:after {
+    content: "";
+    border-radius: inherit;
+    position: absolute;
+    transition: opacity 0.5s, filter 0.5s;
+}
+
+.cardarea:before {
+    inset: calc(var(--border-w) * -1);
+    box-shadow: inset 0.0333em 0.0333em 0.2em #ec67f5, inset -0.0666em -0.0666em 0.15em #400986, inset 0.025em 0.025em 0.1em white;
+    mix-blend-mode: hard-light;
+}
+
+.cardarea:after {
+    inset: 0;
+    border-radius: calc(var(--border-r) - var(--border-w));
+    box-shadow: -0.05em -0.05em 0.05em #094a86, 0.05em 0.05em 0.05em #ec67f5;
+    mix-blend-mode: hard-light;
+}
+
+.cardarea:before,
+.cardarea:after {
+    opacity: 0.25;
+    filter: saturate(0) invert(1);
+}
+
+.cardarea:hover,
+.cardarea:focus {
+    color: #FFF;
+    background: rgba(110, 216, 224, 0.068);
+    box-shadow: 0 0.1em 2.25em -0.5em #14f7ff, 0 0.25em 0.25em -0.15em rgba(251, 255, 20, 0.333);
+    outline: none;
+}
+
+.cardarea:hover:before,
+.cardarea:hover:after,
+.cardarea:focus:before,
+.cardarea:focus:after {
+    opacity: 1;
+    filter: saturate(1) invert(0);
+}
+
+
+.sel {
+    border-bottom: 4px solid rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+}
+
+
+.optioncss {
+    font-family: "Poppins", sans-serif;
+    font-size: 1.2em;
+    background-color: #f7f7f7;
+    appearance: none;
+    border: 0;
+    outline: 0;
+    padding: 1rem 4rem 1rem 1rem;
+    color: rgb(27, 27, 27);
+    border-radius: 0.25em;
+    box-shadow: 0 0 1em 0 rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    &::-ms-expand {
+        display: none;
+    }
+    &:focus {
+        outline: none;
+    }
+    option {
+        color: inherit;
+        background-color: var(--option-bg);
+    }
+}
+
+.buttontranslate{
+    width: 160px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #fff;
+    cursor: pointer;
+    height: 55px;
+    text-align:center;
+    border: none;
+    background-size: 300% 100%;
+    border-radius: 50px;
+    -webkit-moz-transition: all .4s ease-in-out;
+    -o-transition: all .4s ease-in-out;
+    -webkit-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
+    background-image: radial-gradient(#351ff5, #3f92fe);
+ 
+}
+
+.buttontranslate:hover {
+    background-position: 100% 0;
+    -webkit-moz-transition: all .4s ease-in-out;
+    -o-transition: all .4s ease-in-out;
+    -webkit-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
+}
+
+.buttontranslate:hover.bn26 {
+    background-image: linear-gradient(
+        to right,
+        #25aae1,
+        #4481eb,
+        #04befe,
+        #3f86ed
+      );
+      box-shadow: 0 4px 15px 0 rgba(65, 132, 234, 0.75);
+}
+
+.footer {
+    color: #f7f7f7;
+    background-color: #024eda1c;
+    padding: 10px;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    font-size: 10px;
+}
